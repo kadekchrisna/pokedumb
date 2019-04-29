@@ -22,15 +22,15 @@ export default class Login extends Component {
     }
 
     login = () => {
-        // this.props.loginUser(this.state.email, this.state.password)
-        // if (this.props.isLoading == false) {
-        //     Toast.show({
-        //         text: 'Welcome back',
-        //         duration: 1500
-        //     })
-        //     this.props.navigation.navigate('App')
+        this.props.loginUser(this.state.email, this.state.password)
+        if (this.props.isLoading == false) {
+            Toast.show({
+                text: 'Welcome back',
+                duration: 1500
+            })
+            this.props.navigation.navigate('App')
 
-        // }
+        }
     }
 
 
@@ -40,7 +40,7 @@ export default class Login extends Component {
         return (
             <SafeAreaView style={styles.container}>
                 <Spinner
-                    visible={this.state.isLoading}
+                    visible={this.props.isLoading}
                     textContent={'Logging In...'}
                     textStyle={styles.spinnerTextStyle}
                     color={'black'}

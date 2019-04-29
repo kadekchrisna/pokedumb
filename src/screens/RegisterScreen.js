@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, TouchableWithoutFeedback, TextInput, SafeAreaView, StatusBar, TouchableOpacity, KeyboardAvoidingView, BackHandler } from 'react-native';
-import { Button } from 'native-base';
+import { Button, Toast } from 'native-base';
 import Spinner from 'react-native-loading-spinner-overlay';
 
 export default class Register extends Component {
@@ -19,12 +19,12 @@ export default class Register extends Component {
 
     onValidate = () => {
         if (this.state.password === this.state.confPassword) {
-            // this.props.registerUser(this.state.username, this.state.email, this.state.password) 
-            // Toast.show({
-            //     text: 'Hi and Welcome',
-            //     duration: 1500
-            // })
-            // return this.props.navigation.navigate('Home')
+            this.props.registerUser(this.state.username, this.state.email, this.state.password) 
+            Toast.show({
+                text: 'Hi and Welcome',
+                duration: 1500
+            })
+            return this.props.navigation.navigate('App')
                       
         }
         return Alert.alert('Password and confirmation password must be same!')
@@ -34,7 +34,7 @@ export default class Register extends Component {
         return (
             <SafeAreaView style={styles.container}>
                 <Spinner
-                    visible={this.state.isLoading}
+                    visible={this.props.isLoading}
                     textContent={'Signing you up...'}
                     textStyle={styles.spinnerTextStyle}
                     color={'black'}

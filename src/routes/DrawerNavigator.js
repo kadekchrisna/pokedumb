@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Platform, Dimensions } from 'react-native'
 import { createDrawerNavigator, createAppContainer } from 'react-navigation'
 
-import Home from '../screens/HomeScreen';
-import Sidebar from '../components/Sidebar';
+import Home from '../screens/HomeContainers';
+import Sidebar from '../components/SidebarContainers';
 
 const WIDTH = Dimensions.get('window').width;
 

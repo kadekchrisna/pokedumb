@@ -1,11 +1,15 @@
 import { createStackNavigator, createSwitchNavigator } from 'react-navigation';
 
 import Drawer from './DrawerNavigator'
-import Detail from '../screens/DetailScreen'
+import Detail from '../screens/DetailContainers'
 import Join from '../screens/JoinScreen'
-import Login from '../screens/LoginScreen'
-import Register from '../screens/RegisterScreen'
-import Maps from '../screens/MapsScreen'
+import Login from '../screens/LoginContainers'
+import Register from '../screens/RegisterContainers'
+import Maps from '../screens/MapsContainers'
+import Splash from '../screens/SplashContainers'
+import Account from '../screens/AccountContainers'
+import Search from '../screens/SearchScreen'
+import AddPoke from '../screens/AddPokemonContainers'
 
 const authStack = createStackNavigator(
     {
@@ -50,7 +54,25 @@ const appStack = createStackNavigator(
         Detail: {
             screen: Detail,
             navigationOptions: {
-                title: 'Post'
+                header: null
+            }
+        },
+        Account: {
+            screen: Account,
+            navigationOptions: {
+                title: 'Me'
+            }
+        },
+        Search: {
+            screen: Search,
+            navigationOptions: {
+                header: null
+            }
+        },
+        AddPoke: {
+            screen: AddPoke,
+            navigationOptions: {
+                title: 'Add New Pokemon'
             }
         },
     },
@@ -58,8 +80,14 @@ const appStack = createStackNavigator(
         initialRouteName: 'Home'
     }
 );
-const rootStack = createStackNavigator(
+const rootStack = createSwitchNavigator(
     {
+        Splash: {
+            screen: Splash,
+            navigationOptions: {
+                header: null
+            }
+        },
 
         App: {
             screen: appStack,
@@ -76,7 +104,7 @@ const rootStack = createStackNavigator(
 
     },
     {
-        initialRouteName: 'App'
+        initialRouteName: 'Splash'
     }
 );
 

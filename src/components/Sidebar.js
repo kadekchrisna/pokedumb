@@ -19,27 +19,27 @@ export default class Sidebar extends Component {
     //     })
 
     // }
-    // renderLogin = () => {
-    //     if (this.props.isLoggedIn) {
-    //         const { username, pp } = this.props.user
+    renderLogin = () => {
+        if (this.props.isLoggedIn) {
+            const { username } = this.props.user
 
-    //         return (
-    // <TouchableOpacity style={styles.listIcons} onPress={() => this.props.navigation.navigate('Account')}>
-    //     <Thumbnail style={{ width: 30, height: 30, }} source={{ uri: `${BASE_IMAGE_URL}profile/${pp}` }} />
-    //     <Text style={styles.nameIcons}>{username}</Text>
-    // </TouchableOpacity>
-    //         )
-    //     } else {
+            return (
+                <TouchableOpacity style={styles.listIcons} onPress={() => this.props.navigation.navigate('Account')}>
+                    <Thumbnail style={{ width: 30, height: 30, }} source={{ uri: 'https://png.pngtree.com/png-vector/20190411/ourlarge/pngtree-vector-business-men-icon-png-image_924862.jpg' }} />
+                    <Text style={styles.nameIcons}>{username}</Text>
+                </TouchableOpacity>
+            )
+        } else {
 
-    //         return (
-    //             <TouchableOpacity style={styles.listIcons} onPress={() => { this.props.navigation.navigate('Auth') }}>
-    //                 <Thumbnail square style={{ width: 30, height: 30, }} source={{ uri: `${BASE_IMAGE_URL}profile/thumbpp.jpg` }} />
-    //                 <Text style={styles.nameIcons}>Sign In</Text>
-    //             </TouchableOpacity>
-    //         )
-    //     }
+            return (
+                <TouchableOpacity style={styles.listIcons} onPress={() => { this.props.navigation.navigate('Auth') }}>
+                    <Thumbnail square style={{ width: 30, height: 30, }} source={{ uri: 'https://png.pngtree.com/png-vector/20190411/ourlarge/pngtree-vector-business-men-icon-png-image_924862.jpg' }} />
+                    <Text style={styles.nameIcons}>Sign In</Text>
+                </TouchableOpacity>
+            )
+        }
 
-    // }
+    }
 
 
     render() {
@@ -48,10 +48,7 @@ export default class Sidebar extends Component {
                 <Content>
                     <StatusBar backgroundColor="white" barStyle="dark-content" />
                     <View style={{ flex: 1, flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'center', padding: 16, }}>
-                        <TouchableOpacity style={styles.listIcons} onPress={() => this.props.navigation.navigate('Auth')}>
-                            <Thumbnail style={{ width: 30, height: 30, }} source={{ uri: 'https://www.pinclipart.com/picdir/big/181-1814767_person-svg-png-icon-free-download-profile-icon.png' }} />
-                            <Text style={styles.nameIcons}>Username</Text>
-                        </TouchableOpacity>
+                        {this.renderLogin()}
                         <View
                             style={styles.hrLine}
                         />

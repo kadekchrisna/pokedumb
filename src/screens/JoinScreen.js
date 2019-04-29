@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { StatusBar, StyleSheet, View, TouchableOpacity } from 'react-native';
 import { Text, Button, Container, Content } from 'native-base';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 
 export default class Join extends Component {
@@ -18,13 +19,12 @@ export default class Join extends Component {
                 <View style={{ flex: 1.5, flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-end', }}>
                     <StatusBar backgroundColor="black" barStyle="light-content" />
                     <View style={{ flex: 1, flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'center', }}>
-                        <FontAwesome name="exclamation" size={72} color='white' />
-                        <FontAwesome name="question" size={72} color='white' />
+                        <MaterialCommunityIcons name="pokeball" size={72} color='white' />
                     </View>
                 </View>
                 <View style={{ flex: 0.4, flexDirection: 'column', alignItems: 'center', justifyContent: 'center', }}>
-                    <Text style={{ fontSize: 20, color: 'white', fontWeight: 'bold', fontFamily: 'ubuntu', }}> !Hoax </Text>
-                    <Text style={{ fontSize: 14, color: '#CECECE', marginTop: 6, fontFamily: 'ubuntu' }}> Join and give your opinion about what is going on. </Text>
+                    <Text style={{ fontSize: 20, color: 'white', fontWeight: 'bold', fontFamily: 'ubuntu', }}> PokeDumb </Text>
+                    <Text style={{ fontSize: 14, color: '#CECECE', marginTop: 6, fontFamily: 'ubuntu' }}> Join and let's see Pokemon around you. </Text>
                 </View>
                 <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginVertical: 22, }}>
                     <Button style={{ marginHorizontal: 6, paddingHorizontal: 8, }} onPress={() => this.props.navigation.navigate('Register')}> 
